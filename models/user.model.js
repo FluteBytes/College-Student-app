@@ -6,14 +6,13 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     phoneno: {
-        type: String,
-        
+        type: String,  
     },
     std:{
         type: String,
     },
     school:{
-        typeof: String,
+        type: String,
     },
     email: {
         type: String,
