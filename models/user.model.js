@@ -9,6 +9,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         
     },
+    std:{
+        type: String,
+    },
+    school:{
+        typeof: String,
+    },
     email: {
         type: String,
         required: true,

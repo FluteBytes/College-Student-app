@@ -6,7 +6,7 @@ import { tryCatch } from "../middlewares/tryCatch.js";
 
 export const signupUser = tryCatch(async (req, res) => {
 
-    const { name, email, password, phoneno } = req.body;
+    const { name, email, password, phoneno, school , std } = req.body;
 
     let user = await User.findOne({ email });
 
@@ -20,7 +20,9 @@ export const signupUser = tryCatch(async (req, res) => {
         name,
         email,
         password: hashPassword,
-        phoneno
+        phoneno,
+        school,
+        std,
     }
 
     const otp = Math.floor(Math.random() * 1000000);
@@ -62,6 +64,8 @@ export const verifyOtp = tryCatch(async (req, res) => {
         email: decodeOtp.user.email,
         password: decodeOtp.user.password,
         phoneno: decodeOtp.user.phoneno,
+        school: decodeOtp.user.school,
+        std: decodeOtp.user.std,
         role: decodeOtp.user.role,
         subscription: decodeOtp.user.subscription,
     })
