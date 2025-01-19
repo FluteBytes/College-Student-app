@@ -56,7 +56,7 @@ export const verifyOtp = tryCatch(async (req, res) => {
     })
 
     if(decodeOtp.otp!= otp) return res.status(400).json({
-        message: "Invalid OTP"
+        message: "Invalid OTP Please Try again"
     })
 
     const user = await User.create({
